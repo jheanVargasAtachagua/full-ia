@@ -13,10 +13,17 @@ $personas = $stmt->fetchAll();
     <title>Nuevo préstamo</title>
 </head>
 <body>
-<h1>Registrar préstamo</h1>
+<h1>Registrar préstamo / deuda</h1>
 
 <form method="post" action="prestamos_guardar.php">
-    <label>Persona:</label>
+    <label>Tipo de transacción:</label>
+    <select name="tipo" required>
+        <option value="CONCEDIDO">Préstamo CONCEDIDO (lo das)</option>
+        <option value="RECIBIDO">Préstamo RECIBIDO (lo recibes)</option>
+    </select>
+    <br><br>
+
+    <label>Persona / Empresa:</label>
     <select name="id_persona" required>
         <option value="">-- Seleccione --</option>
         <?php foreach ($personas as $p): ?>
