@@ -23,5 +23,7 @@
     <button type="submit">Guardar</button>
 </form>
 
+<br>
+<a href="personas_listar.php">Volver a la lista</a> | <a href="index.php">Volver al Menú Principal</a>
 </body>
 </html>
