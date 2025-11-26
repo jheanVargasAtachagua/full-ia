@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard · Deudas y Préstamos</title>
+  <title>Dashboard · CrediPanel</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -11,9 +11,9 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-logo">DP</div>
+        <div class="brand-logo">CP</div>
         <div class="brand-title">
-          <span>DebtPanel</span>
+          <span>CrediPanel</span>
           <span>Deudas & Préstamos</span>
         </div>
       </div>
@@ -21,16 +21,49 @@
       <nav>
         <p class="nav-section-title">Principal</p>
         <ul class="nav-list">
-          <li class="nav-item active"><a href="index.html"><span class="icon">📊</span><span>Dashboard</span></a></li>
-          <li class="nav-item"><a href="clientes.html"><span class="icon">👤</span><span>Clientes</span></a></li>
-          <li class="nav-item"><a href="prestamos.html"><span class="icon">💳</span><span>Préstamos</span></a></li>
-          <li class="nav-item"><a href="calendario.html"><span class="icon">📅</span><span>Calendario de pagos</span></a></li>
+          <li class="nav-item active">
+            <a href="index.html">
+              <span class="icon">📊</span><span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="clientes.html">
+              <span class="icon">👤</span><span>Clientes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="prestamos.html">
+              <span class="icon">💳</span><span>Préstamos</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="calendario.html">
+              <span class="icon">📅</span><span>Calendario de pagos</span>
+            </a>
+          </li>
         </ul>
 
         <p class="nav-section-title">Riesgo</p>
         <ul class="nav-list">
-          <li class="nav-item"><a href="cartera.html"><span class="icon">📈</span><span>Cartera por vencer</span></a></li>
-          <li class="nav-item"><a href="morosidad.html"><span class="icon">⚠️</span><span>Morosidad</span></a></li>
+          <li class="nav-item">
+            <a href="cartera.html">
+              <span class="icon">📈</span><span>Cartera por vencer</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="morosidad.html">
+              <span class="icon">⚠️</span><span>Morosidad</span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="nav-section-title">Cuenta</p>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="login.html">
+              <span class="icon">🔑</span><span>Iniciar sesión</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </aside>
@@ -40,8 +73,12 @@
       <header class="main-header">
         <div class="title-block">
           <h1>Dashboard financiero</h1>
-          <p>Visión general de préstamos, pagos y riesgo de cartera.</p>
+          <p>Visión general de préstamos, saldos y riesgo de cartera en CrediPanel.</p>
         </div>
+
+        <a href="login.html" class="btn-primary">
+          Cambiar usuario
+        </a>
       </header>
 
       <section class="grid">
@@ -50,22 +87,25 @@
             <div class="card-header">
               <div>
                 <div class="card-title">Resumen general</div>
-                <div class="card-subtitle">Basado en movimientos registrados.</div>
+                <div class="card-subtitle">Datos calculados desde la base de datos.</div>
               </div>
             </div>
 
             <div class="summary-cards">
               <div class="summary-card">
                 <div class="summary-label">Préstamos otorgados</div>
-                <div id="dashTotalPrestamos" class="summary-value">S/ 0.00</div>
+                <div class="summary-value">
+                </div>
               </div>
               <div class="summary-card">
                 <div class="summary-label">Saldo pendiente</div>
-                <div id="dashTotalPendiente" class="summary-value">S/ 0.00</div>
+                <div class="summary-value">
+                </div>
               </div>
               <div class="summary-card">
                 <div class="summary-label">Total recuperado</div>
-                <div id="dashTotalPagado" class="summary-value">S/ 0.00</div>
+                <div class="summary-value">
+                </div>
               </div>
             </div>
           </div>
@@ -82,17 +122,16 @@
 
             <div class="metric-row">
               <span class="metric-label">Porcentaje pendiente</span>
-              <span id="dashPorcentajePendiente" class="metric-value">0%</span>
+              <span class="metric-value">
+              </span>
             </div>
             <div class="progress-bar">
-              <div id="dashProgressPendiente" class="progress-inner"></div>
+              <div class="progress-inner" style="width: <?= min($porcentajePendiente, 100); ?>%;"></div>
             </div>
           </div>
         </div>
       </section>
     </main>
   </div>
-
-  <script src="Js/app.js"></script>
 </body>
 </html>
