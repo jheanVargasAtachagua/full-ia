@@ -1,16 +1,18 @@
 <?php
 require_once __DIR__ . '/config/db.php';
 
-// Obtener personas para el select
-$sql = "SELECT id, nombre FROM personas ORDER BY nombre";
+// Obtener personas/empresas para el select
+$sql = "SELECT id, nombre, tipo FROM personas ORDER BY nombre";
 $stmt = $pdo->query($sql);
 $personas = $stmt->fetchAll();
+
+$id_preselect = isset($_GET['id_persona']) ? (int)$_GET['id_persona'] : 0;
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Nuevo préstamo</title>
+    <title>Nuevo préstamo / deuda</title>
 </head>
 <body>
 <h1>Registrar préstamo / deuda</h1>
@@ -23,12 +25,12 @@ $personas = $stmt->fetchAll();
     </select>
     <br><br>
 
-    <label>Persona / Empresa:</label>
+    <label>Entidad (Persona / Empresa):</label>
     <select name="id_persona" required>
         <option value="">-- Seleccione --</option>
         <?php foreach ($personas as $p): ?>
-            <option value="<?php echo $p['id']; ?>">
-                <?php echo htmlspecialchars($p['nombre']); ?>
+            <option value="<?php echo $p['id']; ?>" <?php if ($p['id']==$id_preselect) echo 'selected'; ?>>
+                <?php echo htmlspecialchars($p['nombre']); ?> (<?php echo htmlspecialchars($p['tipo']); ?>)
             </option>
         <?php endforeach; ?>
     </select>

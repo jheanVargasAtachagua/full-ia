@@ -14,7 +14,7 @@ $personas = $stmt->fetchAll();
 <body>
 <h1>Personas / Empresas</h1>
 
-<a href="personas_form.php">Nueva persona/empresa</a>
+<a href="personas_form.php">Nueva entidad</a>
 <br><br>
 
 <table border="1" cellpadding="5" cellspacing="0">
@@ -36,14 +36,9 @@ $personas = $stmt->fetchAll();
             <td><?php echo htmlspecialchars($p['telefono']); ?></td>
             <td><?php echo htmlspecialchars($p['email']); ?></td>
             <td>
-                <a href="prestamos_form.php?id_persona=<?php echo $p['id']; ?>">
-                    Nuevo préstamo
-                </a>
+                <a href="prestamos_form.php?id_persona=<?php echo $p['id']; ?>">Nuevo préstamo/deuda</a>
                 |
-                <a href="prestamos_listar.php?id_persona=<?php echo $p['id']; ?>">
-                    Ver préstamos
-                </a>
-
+                <a href="prestamos_listar.php?id_persona=<?php echo $p['id']; ?>">Ver préstamos/deudas</a>
             </td>
         </tr>
     <?php endforeach; ?>
