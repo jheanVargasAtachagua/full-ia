@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma de Acceso Seguro | Gestión Financiera</title>
+    <style>
+        /* --- 1. CONFIGURACIÓN BASE Y TIPOGRAFÍA --- */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
+        :root {
+            --color-primary: #004a92; /* Azul Corporativo Oscuro */
+            --color-secondary: #008080; /* Teal/Verde de Acción */
+            --color-background: #f4f6f9; /* Fondo muy claro y limpio */
+            --color-text: #2c3e50; /* Gris azulado oscuro para el texto */
+            --color-light-bg: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 2. BARRA DE ACCESO SUPERIOR (HEADER) */
+        .header-access {
+            background-color: var(--color-primary); 
+            color: white;
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .system-name {
+            font-size: 1.6em;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            margin-left: 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s, border-radius 0.3s;
+            border: 1px solid transparent;
+        }
+        .header-links .btn-login {
+            background-color: transparent;
+            border-color: white;
+        }
+        .header-links .btn-register {
+            background-color: var(--color-secondary);
+            border-color: var(--color-secondary);
+        }
+        .header-links a:hover {
+            background-color: #003366;
+            border-color: var(--color-secondary);
+        }
+
+        /* 3. CONTENIDO PRINCIPAL (CAJA CENTRAL) */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+        .presentation-box {
+            width: 90%;
+            max-width: 1000px;
+            background-color: white;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 50px;
+            display: flex;
+            gap: 40px;
+            text-align: left;
+        }
+        
+        /* Columna 1: Título y Llamada a la Acción */
+        .call-to-action {
+            flex: 2;
+            padding-right: 30px;
+            border-right: 1px solid #e0e0e0;
+        }
+        .call-to-action h1 {
+            color: var(--color-primary);
+            font-size: 3.2em;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        .call-to-action h2 {
+            color: var(--color-secondary);
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        .cta-note {
+            background-color: var(--color-light-bg);
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-top: 20px;
+            border-left: 5px solid var(--color-secondary);
+        }
+
+        /* Columna 2: Descripción y Características */
+        .description-content {
+            flex: 1;
+            padding-left: 30px;
+        }
+        .description-content h3 {
+            color: var(--color-text);
+            font-size: 1.4em;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            font-size: 1em;
+            color: var(--color-text);
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list strong {
+            color: var(--color-primary);
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        
+        /* Efecto Hover en el área de login/registro (Opcional, pero da interactividad) */
+        .header-links a:hover {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="header-access">
+        <span class="system-name">PLATAFORMA FINANCIERA SEGURA</span>
+        <div class="header-links">
+            <a href="login.php" class="btn-login">🔑 Iniciar Sesión</a>
+            <a href="registro.php" class="btn-register">📝 Crear Cuenta</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        
+        <div class="presentation-box">
+            
+            <div class="call-to-action">
+                <h1>Gestión Integral de Clientes y Amortizaciones de Crédito</h1>
+                <h2>La solución profesional para la administración de su cartera de préstamos.</h2>
+                
+                <p>
+                    Este sistema está diseñado como una herramienta de gestión crediticia de **alta precisión**. Nuestro enfoque está en la solidez, la transparencia y el cumplimiento de los estándares financieros más exigentes.
+                </p>
+                <p>
+                    Garantizamos una administración eficiente del ciclo de vida de los préstamos, desde el registro del cliente hasta la generación detallada del cronograma de pagos.
+                </p>
+
+                <p class="cta-note">
+                    Para comenzar a utilizar nuestras herramientas, por favor, **inicie sesión** o **cree una cuenta** utilizando los enlaces seguros en la barra superior.
+                </p>
+            </div>
+
+            <div class="description-content">
+                <h3>Funcionalidades Clave del Sistema</h3>
+                
+                <ul class="feature-list">
+                    <li><strong>CONTROL CENTRALIZADO:</strong> Gestión completa de clientes (Personas / Empresas).</li>
+                    <li><strong>CÁLCULO AUTOMÁTICO:</strong> Generación instantánea de tablas de amortización.</li>
+                    <li><strong>VISIBILIDAD TOTAL:</strong> Desglose preciso de Capital, Interés y Saldo restante por cada cuota.</li>
+                    <li><strong>SEGURIDAD:</strong> Acceso protegido con credenciales únicas para cada usuario.</li>
+                </ul>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+</body>
+</html>

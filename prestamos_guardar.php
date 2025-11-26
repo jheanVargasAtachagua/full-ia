@@ -2,6 +2,7 @@
 require_once __DIR__ . '/config/db.php';
 
 // 1. Recibir y validar datos
+$tipo          = $_POST['tipo'] ?? 'CONCEDIDO';
 $id_persona    = (int)($_POST['id_persona'] ?? 0);
 $monto         = (float)($_POST['monto'] ?? 0);
 $tasa_anual    = (float)($_POST['tasa_anual'] ?? 0);
@@ -13,11 +14,12 @@ if ($id_persona <= 0 || $monto <= 0 || $numero_cuotas <= 0 || $fecha_inicio === 
 }
 
 // 2. Insertar préstamo
-$sql = "INSERT INTO prestamos (id_persona, monto, tasa_anual, numero_cuotas, fecha_inicio)
-        VALUES (:id_persona, :monto, :tasa_anual, :numero_cuotas, :fecha_inicio)";
+$sql = "INSERT INTO prestamos (id_persona, tipo, monto, tasa_anual, numero_cuotas, fecha_inicio)
+        VALUES (:id_persona, :tipo, :monto, :tasa_anual, :numero_cuotas, :fecha_inicio)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     ':id_persona'    => $id_persona,
+    ':tipo'          => $tipo,
     ':monto'         => $monto,
     ':tasa_anual'    => $tasa_anual,
     ':numero_cuotas' => $numero_cuotas,

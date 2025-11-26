@@ -43,6 +43,7 @@ $personas = $stmt->fetchAll();
                 <a href="prestamos_listar.php?id_persona=<?php echo $p['id']; ?>">
                     Ver préstamos
                 </a>
+
             </td>
         </tr>
     <?php endforeach; ?>
