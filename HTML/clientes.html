@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clientes · Deudas y Préstamos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">DP</div>
+        <div class="brand-title">
+          <span>DebtPanel</span>
+          <span>Deudas & Préstamos</span>
+        </div>
+      </div>
+
+      <nav>
+        <p class="nav-section-title">Principal</p>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html"><span class="icon">📊</span><span>Dashboard</span></a></li>
+          <li class="nav-item active"><a href="clientes.html"><span class="icon">👤</span><span>Clientes</span></a></li>
+          <li class="nav-item"><a href="prestamos.html"><span class="icon">💳</span><span>Préstamos</span></a></li>
+          <li class="nav-item"><a href="calendario.html"><span class="icon">📅</span><span>Calendario de pagos</span></a></li>
+        </ul>
+
+        <p class="nav-section-title">Riesgo</p>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="cartera.html"><span class="icon">📈</span><span>Cartera por vencer</span></a></li>
+          <li class="nav-item"><a href="morosidad.html"><span class="icon">⚠️</span><span>Morosidad</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div class="title-block">
+          <h1>Gestión de clientes</h1>
+          <p>Registra y administra los datos de tus clientes.</p>
+        </div>
+      </header>
+
+      <section class="grid-single">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Nuevo cliente</div>
+              <div class="card-subtitle">Datos básicos del deudor.</div>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="cliNombre">Nombre completo</label>
+              <input id="cliNombre" type="text" placeholder="Nombre y apellidos" />
+            </div>
+            <div class="field">
+              <label for="cliDocumento">Documento</label>
+              <input id="cliDocumento" type="text" placeholder="DNI / RUC" />
+            </div>
+            <div class="field">
+              <label for="cliTelefono">Teléfono</label>
+              <input id="cliTelefono" type="text" placeholder="Celular / Fijo" />
+            </div>
+            <div class="field">
+              <label for="cliEmail">Correo</label>
+              <input id="cliEmail" type="email" placeholder="correo@ejemplo.com" />
+            </div>
+            <div class="field">
+              <label for="cliDireccion">Dirección</label>
+              <input id="cliDireccion" type="text" placeholder="Dirección completa" />
+            </div>
+            <button id="btnAgregarCliente" class="btn-primary" type="button">
+              + Registrar cliente
+            </button>
+          </div>
+
+          <div class="table-wrapper">
+            <div class="scroll-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Documento</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyClientes"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartera por vencer · Deudas y Préstamos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">DP</div>
+        <div class="brand-title">
+          <span>DebtPanel</span>
+          <span>Deudas & Préstamos</span>
+        </div>
+      </div>
+
+      <nav>
+        <p class="nav-section-title">Principal</p>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html"><span class="icon">📊</span><span>Dashboard</span></a></li>
+          <li class="nav-item"><a href="clientes.html"><span class="icon">👤</span><span>Clientes</span></a></li>
+          <li class="nav-item"><a href="prestamos.html"><span class="icon">💳</span><span>Préstamos</span></a></li>
+          <li class="nav-item"><a href="calendario.html"><span class="icon">📅</span><span>Calendario de pagos</span></a></li>
+        </ul>
+
+        <p class="nav-section-title">Riesgo</p>
+        <ul class="nav-list">
+          <li class="nav-item active"><a href="cartera.html"><span class="icon">📈</span><span>Cartera por vencer</span></a></li>
+          <li class="nav-item"><a href="morosidad.html"><span class="icon">⚠️</span><span>Morosidad</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div class="title-block">
+          <h1>Cartera por vencer</h1>
+          <p>Préstamos pendientes dentro del rango de días seleccionado.</p>
+        </div>
+      </header>
+
+      <section class="grid-single">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Cartera a corto plazo</div>
+              <div class="card-subtitle">Filtra según días hasta el vencimiento.</div>
+            </div>
+            <div>
+              <select id="filtroDiasCartera">
+                <option value="7">7 días</option>
+                <option value="15">15 días</option>
+                <option value="30" selected>30 días</option>
+                <option value="60">60 días</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="metric-row">
+            <span class="metric-label">Total por vencer en rango</span>
+            <span id="totalCarteraPorVencer" class="metric-value">S/ 0.00</span>
+          </div>
+
+          <div class="table-wrapper">
+            <div class="scroll-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>Fecha venc.</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyCartera"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
